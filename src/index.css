@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+html,
+body,
+#root {
+min-height: 100%;
+}
+
+body {
+font-family: Inter, sans-serif;
+background: #f8fafc;
+color: #0f172a;
+}
+
+button {
+cursor: pointer;
+}
+
+input,
+select,
+textarea {
+font: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+outline: none;
+}
+
+.auth-gradient {
+background:
+radial-gradient(
+circle at top left,
+rgba(99,102,241,0.4),
+transparent 40%
+),
+radial-gradient(
+circle at bottom right,
+rgba(168,85,247,0.35),
+transparent 40%
+),
+linear-gradient(
+135deg,
+#0f172a,
+#1e293b,
+#312e81
+);
+}
+
+.glass-card {
+background: rgba(85, 76, 76, 0.08);
+backdrop-filter: blur(20px);
+border: 1px solid rgba(255,255,255,0.1);
+}
+
+.auth-input {
+width: 100%;
+border: 1px solid #e2e8f0;
+border-radius: 16px;
+padding: 16px 20px;
+transition: all 0.2s ease;
+}
+
+.auth-input:focus {
+border-color: #8b5cf6;
+box-shadow:
+0 0 0 4px
+rgba(139,92,246,0.12);
+}
+
+.primary-btn {
+background: linear-gradient(
+135deg,
+#6366f1,
+#8b5cf6
+);
+
+color: white;
+
+transition: all .25s ease;
+}
+
+.primary-btn:hover {
+transform: translateY(-1px);
+box-shadow:
+0 15px 35px
+rgba(99,102,241,.25);
+}
+
+
