@@ -112,7 +112,6 @@ class User(AbstractUser):
 
 
 
-
 class TherapistProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
@@ -120,4 +119,4 @@ class TherapistProfile(models.Model):
     certificates = models.FileField(upload_to="certificates/")
     experience_years = models.IntegerField(default=0)
 
-    created_at = models.DateTimeField(auto_now_add=True)        
+    created_at = models.DateTimeField(auto_now_add=True)  

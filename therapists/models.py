@@ -47,7 +47,25 @@ class TherapistProfile(models.Model):
     updated_at = models.DateTimeField(
         auto_now=True
     )
+qualification = models.CharField(max_length=200)
 
-    def __str__(self):
+phone = models.CharField(max_length=20)
+
+address = models.CharField(max_length=300)
+
+license_number = models.CharField(max_length=100)
+
+CONSULTATION_CHOICES = (
+    ("ONLINE", "Online"),
+    ("OFFLINE", "Offline"),
+    ("BOTH", "Both"),
+)
+
+consultation_mode = models.CharField(
+    max_length=20,
+    choices=CONSULTATION_CHOICES,
+    default="ONLINE"
+)
+def __str__(self):
 
         return self.user.full_name

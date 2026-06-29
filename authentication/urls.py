@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterView, LoginView, CurrentUserView, GoogleAuthView,  TherapistRegisterView
+from .views import RegisterView, LoginView, CurrentUserView,PendingTherapistsView, ApproveTherapistView, GoogleAuthView,  TherapistRegisterView, CustomTokenObtainPairView
 from rest_framework_simplejwt.views import TokenRefreshView
 
 urlpatterns = [
@@ -11,7 +11,7 @@ urlpatterns = [
 
     path(
         "login/",
-        LoginView.as_view(),
+        LoginView.as_view(),        
         name="login"
     ),
     path(
@@ -34,5 +34,8 @@ path(
     GoogleAuthView.as_view(),
     name="google-auth"
 ),
+  path("login/", CustomTokenObtainPairView.as_view(), name="login"),
+    path("admin/therapists/pending/", PendingTherapistsView.as_view()),
+        path("admin/approve-therapist/<int:user_id>/", ApproveTherapistView.as_view()),
 
 ]
